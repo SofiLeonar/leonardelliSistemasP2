@@ -1,0 +1,46 @@
+openapi: 3.0.0
+info:
+  description: Sistema de marketing y ventas.
+  version: 1.0.0
+  title: Sistema de marketing y ventas
+servers:
+  - url: 'http://localhost:3000'
+    description: 'Entorno de desarrollo'
+paths:
+
+  /parser/parse_excel:
+    post:
+      summary: Parsea archivo de Excel
+      consumes:
+        - multipart/form-data
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        200:
+          description: operacion correcta
+
+
+  /parser/parse_csv:
+    post:
+      summary: Parsea archivo de CSV
+      consumes:
+        - multipart/form-data
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        200:
+          description: operacion correcta
