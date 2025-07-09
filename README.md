@@ -55,8 +55,6 @@ Creá un archivo .env en la raíz del proyecto con la siguiente información (co
 
     ```
 
-
-
 > ⚠️ **IMPORTANTE:**  
 > Si ya tenés MySQL configurado con otro usuario, contraseña o puerto, reemplazá los valores anteriores por los tuyos reales.  
 > Por ejemplo, si tu usuario no es `root`, o si usás una contraseña, actualizá los campos `DB_USER` y `DB_PASS` según tu configuración local.
