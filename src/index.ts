@@ -1,3 +1,5 @@
+import { JSONRequestFormat } from './requestFormats/json.requestformat'
+import { IRequestFormat } from './requestFormats/requestformat.interface' 
 import swaggerUi, { JsonObject } from 'swagger-ui-express'
 
 import * as fs from 'fs';
@@ -15,7 +17,7 @@ const fileContents = fs.readFileSync('./swagger.yaml', 'utf8')
 const data = yaml.load(fileContents, {json: true}) as JsonObject
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(data))
 
-app.post('/parser/parse_excel', (req: any, res: any) => {
+app.post('/parser/parse_excel', (req: any, res: any) => { 
   if(!req.files)
   {
       res.send("File was not found")
@@ -47,7 +49,33 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
+
 function storeData(obj: IDataFormat) {
-  const data = obj.extract() // Extraemos información y la guardamos en la base de datos
+    const data = obj.extract() // Extraemos información y la guardamos en la base de datos
   console.log(data)
+}
+
+//Json
+app.post('/parser/parse_json', (req: any, res: any) => {
+  if (!req.files || !req.files.file) {
+    return res.status(400).send("Archivo no enviado")
+  }
+
+  let parsed: any
+
+  try {
+    const jsonString = req.files.file.data.toString('utf8')
+    parsed = JSON.parse(jsonString)
+  } catch (err) {
+    return res.status(400).send("JSON inválido")
+  }
+
+  const requestFormat = new JSONRequestFormat(parsed)
+  storeRequest(requestFormat)
+  res.send("Archivo JSON procesado correctamente") 
+})
+
+function storeRequest(format: IRequestFormat) {
+  const data = format.extract()
+  console.log("Desde request:", data)
 }

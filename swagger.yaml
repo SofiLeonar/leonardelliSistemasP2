@@ -24,7 +24,7 @@ paths:
                   format: binary
       responses:
         200:
-          description: operacion correcta
+          description: archivo procesado correctamente
 
 
   /parser/parse_csv:
@@ -43,4 +43,22 @@ paths:
                   format: binary
       responses:
         200:
-          description: operacion correcta
+          description: Archivo procesado correctamente
+
+  /parser/parse_json:
+    post:
+      summary: Parsear archivo JSON
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: Archivo JSON a subir
+      responses:
+        '200':
+          description: Archivo procesado correctamente
