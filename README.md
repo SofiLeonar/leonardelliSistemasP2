@@ -82,8 +82,8 @@ El servidor corre en: `http://localhost:3000/api-docs/`
 
 > ✔️ Luego de procesar el archivo, se envía una **notificación automática por email** avisando que se hizo una nueva carga.
 
->⚠️ **IMPORTANTE:** 
->Para que el sistema pueda enviar correctamente una notificación cada vez que se realiza una carga de productos (ya sea desde un archivo Excel, CSV o JSON), es necesario establecer un correo de destino en el archivo correspondiente.
+⚠️ **IMPORTANTE:** 
+Para que el sistema pueda enviar correctamente una notificación cada vez que se realiza una carga de productos (ya sea desde un archivo Excel, CSV o JSON), es necesario establecer un correo de destino en el archivo correspondiente.
 
 📍 Archivo: src/services/notificacion.service.ts
 💻Linea 3
