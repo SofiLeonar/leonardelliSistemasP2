@@ -26,7 +26,6 @@ paths:
         200:
           description: archivo procesado correctamente
 
-
   /parser/parse_csv:
     post:
       summary: Parsea archivo de CSV
@@ -62,3 +61,49 @@ paths:
       responses:
         '200':
           description: Archivo procesado correctamente
+
+  /productos:
+    get:
+      summary: Obtener productos cargados
+      description: Devuelve una lista de todos los productos en el sistema.
+      responses:
+        '200':
+          description: Lista de productos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    nombre:
+                      type: string
+                    categoria:
+                      type: string
+                    proveedor:
+                      type: string
+                    precio_base:
+                      type: integer
+        '500':
+          description: Error al obtener productos
+
+  /stock:
+    get:
+      summary: Obtener stock disponible
+      description: Devuelve una lista del stock actual con nombre de producto y cantidad.
+      responses:
+        '200':
+          description: Lista de stock
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    producto:
+                      type: string
+                    cantidad:
+                      type: integer
+        '500':
+          description: Error al obtener stock
