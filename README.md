@@ -66,7 +66,7 @@ Entrá a tu consola de MySQL o cliente (como DBeaver, phpMyAdmin o Workbench) y 
 5. Iniciar el servidor:
 
     ```
-    npm run start
+    npm run dev
     ```
 El servidor corre en: `http://localhost:3000/api-docs/`
 
