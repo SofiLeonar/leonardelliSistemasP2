@@ -19,7 +19,6 @@ Este proyecto permite **cargar productos** desde archivos Excel, CSV o JSON a un
 - ExcelJS / CSV Parse / JSON
 - Nodemailer (para envío de correos)
 - dotenv (configuración de entorno)
-- Swagger-UI-Express (documentación visual)
 
 ---
 
