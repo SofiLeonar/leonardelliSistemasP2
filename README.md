@@ -68,8 +68,8 @@ Entrá a tu consola de MySQL o cliente (como DBeaver, phpMyAdmin o Workbench) y 
     ```
     npm run start
     ```
-> ⚠️ **IMPORTANTE:**  
-> El servidor corre en: `http://localhost:3000/api-docs/`
+El servidor corre en: `http://localhost:3000/api-docs/`
+
 ---
 
 ### 📤 Carga de productos
