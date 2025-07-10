@@ -16,13 +16,14 @@ export class CSVDataFormat implements IDataFormat {
     })
 
     parsedData.forEach((row: any[], i: number) => {
-      if (i === 0) return
+      if (i === 0) return 
 
       data.push({
-        nombre: row[1],
-        categoria: row[2],
-        proveedor: row[3],
-        precio_base: row[4]
+        nombre: row[1]?.trim(),
+        categoria: row[2]?.trim(),
+        proveedor: row[3]?.trim(),
+        precio_base: row[4]?.trim(),
+        cantidad: row[5]?.trim()
       })
     })
 
