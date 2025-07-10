@@ -80,7 +80,9 @@ El servidor corre en: `http://localhost:3000/api-docs/`
 | `POST`   | `/parser/parse_csv`      | Sube archivo CSV                    |
 | `POST`   | `/parser/parse_json`     | Sube archivo JSON                   |
 
-> ✔️ Luego de procesar el archivo, se envía una **notificación automática por email** avisando que se hizo una nueva carga.
+✔️ Luego de procesar el archivo, se envía una **notificación automática por email** avisando que se hizo una nueva carga.
+
+---
 
 ⚠️ **IMPORTANTE:** 
 Para que el sistema pueda enviar correctamente una notificación cada vez que se realiza una carga de productos (ya sea desde un archivo Excel, CSV o JSON), es necesario establecer un correo de destino en el archivo correspondiente.
@@ -112,8 +114,8 @@ Se solicita cambiarlo por su correo para poder recibir dichas notificaciones.
   "email": "ejemplo@gmail.com"
 }
 ```
->⚠️ **IMPORTANTE:** 
->No olvidar reemplazar el correo por el que quiera recibir el reporte.
+⚠️ **IMPORTANTE:** 
+No olvidar reemplazar el correo por el que quiera recibir el reporte.
 
 ---
 
