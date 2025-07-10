@@ -15,7 +15,7 @@ Este proyecto permite **cargar productos** desde archivos Excel, CSV o JSON a un
 - Node.js + Express 
 - Prisma ORM
 - Typescript
-- Swagger (para documentación)
+- Swagger
 - ExcelJS / CSV Parse / JSON
 - Nodemailer (para envío de correos)
 - dotenv (configuración de entorno)
