@@ -107,3 +107,28 @@ paths:
                       type: integer
         '500':
           description: Error al obtener stock
+
+  /enviar-reporte:
+    post:
+      summary: Enviar reporte de stock por email
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                  example: ejemplo@correo.com
+              required:
+                - email
+      responses:
+        '200':
+          description: Reporte enviado correctamente
+        '400':
+          description: Falta el email en el cuerpo de la petición
+        '500':
+          description: Error al enviar el reporte
+

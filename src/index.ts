@@ -1,9 +1,11 @@
 import express from 'express'
 import fileupload from 'express-fileupload'
 import swaggerUi, { JsonObject } from 'swagger-ui-express'
-import * as fs from 'fs'
+import { generarExcel } from './services/reporte.service'
+import { enviarReportePorEmail } from './services/email.service'
 import * as yaml from 'js-yaml'
 import cors from 'cors'
+import * as fs from 'fs'
 import { PrismaClient } from '@prisma/client'
 import { ExcelDataFormat } from './dataFormats/excel.dataformat'
 import { CSVDataFormat } from './dataFormats/csv.dataformat'
@@ -11,6 +13,7 @@ import { JSONRequestFormat } from './requestFormats/json.requestformat'
 import { storeData, storeRequest } from './services/product.service'
 
 const app = express()
+app.use(express.json())
 app.use(cors())
 app.use(fileupload())
 const prisma = new PrismaClient()
@@ -116,5 +119,22 @@ app.get('/stock', async (req, res) => {
   } catch (error) {
     console.error('Error al obtener stock:', error)
     res.status(500).send('Error al obtener stock')
+  }
+})
+
+app.post('/enviar-reporte', async (req : any, res : any) => {
+  const { email } = req.body
+
+  if (!email) {
+    return res.status(400).send('Falta el email en el cuerpo de la petición')
+  }
+
+  try {
+    const ruta = await generarExcel()
+    await enviarReportePorEmail(email, ruta)
+    res.send(`Reporte enviado correctamente a ${email}`)
+  } catch (error) {
+    console.error('Error al enviar el reporte:', error)
+    res.status(500).send('Error al enviar el reporte')
   }
 })
