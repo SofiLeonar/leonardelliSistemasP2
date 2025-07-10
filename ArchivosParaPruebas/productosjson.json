@@ -1,0 +1,44 @@
+[
+  {
+    "nombre": "Galletitas de avena",
+    "categoria": "Dulce",
+    "proveedor": "prov7",
+    "precio_base": 30,
+    "cantidad": 6
+  },
+  {
+    "nombre": "Medialunas",
+    "categoria": "Panaderia",
+    "proveedor": "prov8",
+    "precio_base": 180,
+    "cantidad": 12
+  },
+  {
+    "nombre": "Mani salado",
+    "categoria": "Salado",
+    "proveedor": "prov9",
+    "precio_base": 50,
+    "cantidad": 20
+  },
+  {
+    "nombre": "Pan",
+    "categoria": "Panaderia",
+    "proveedor": "prov10",
+    "precio_base": 70,
+    "cantidad": 10
+  },
+  {
+    "nombre": "Yogurt",
+    "categoria": "Dulce",
+    "proveedor": "prov11",
+    "precio_base": 90,
+    "cantidad": 8
+  },
+  {
+    "nombre": "Agua",
+    "categoria": "Bebida",
+    "proveedor": "prov12",
+    "precio_base": 60,
+    "cantidad": 15
+  }
+]

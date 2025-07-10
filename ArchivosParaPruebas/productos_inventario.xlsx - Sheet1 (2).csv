@@ -1,0 +1,7 @@
+ID,nombre,categoria,proveedor,precio_base,cantidad
+123,Masitas,Dulce,prov1,25,2
+355,Helado,Dulce,prov2,40,5
+648,Papas,Salado,prov3,20,10
+729,Dulce de leche,Dulce,prov4,25,8
+821,Cereal,Dulce,prov5,60,2
+1034,Vino tinto,Bebida,prov6,250,7
