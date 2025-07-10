@@ -6,6 +6,7 @@ import { enviarReportePorEmail } from './services/email.service'
 import * as yaml from 'js-yaml'
 import cors from 'cors'
 import * as fs from 'fs'
+import { enviarNotificacion } from './services/notification.service'
 import { PrismaClient } from '@prisma/client'
 import { ExcelDataFormat } from './dataFormats/excel.dataformat'
 import { CSVDataFormat } from './dataFormats/csv.dataformat'
@@ -32,7 +33,8 @@ app.post('/parser/parse_excel', async (req: any, res: any) => {
 
   try {
     await storeData(dataFormat)
-    res.send('Archivo Excel procesado y guardado')
+    await enviarNotificacion()
+    res.send('Archivo Excel procesado y guardado. Se ha enviado una notificación automática.')
   } catch (error) {
     console.error('Error en /parser/parse_excel:', error)
     res.status(500).send('Error al guardar los datos')
@@ -48,7 +50,8 @@ app.post('/parser/parse_csv', async (req: any, res: any) => {
 
   try {
     await storeData(dataFormat)
-    res.send('Archivo CSV procesado y guardado')
+    await enviarNotificacion()
+    res.send('Archivo CSV procesado y guardado. Se ha enviado una notificación automática.')
   } catch (error) {
     console.error('Error en /parser/parse_csv:', error)
     res.status(500).send('Error al guardar los datos')
@@ -72,7 +75,8 @@ app.post('/parser/parse_json', async (req: any, res: any) => {
 
   try {
     await storeRequest(requestFormat)
-    res.send('Archivo JSON procesado y guardado')
+    await enviarNotificacion()
+    res.send('Archivo JSON procesado y guardado. Se ha enviado una notificación automática.')
   } catch (error) {
     console.error('Error en /parser/parse_json:', error)
     res.status(500).send('Error al guardar los datos JSON')

@@ -33,3 +33,19 @@ export const enviarReportePorEmail = async (emailDestino: string, rutaReporte: s
 
   console.log(`Reporte enviado a ${emailDestino}`)
 }
+
+export async function enviarMensajePorEmail(
+  destinatario: string,
+  asunto: string,
+  mensaje: string
+) {
+  await transporter.sendMail({
+    from: `"Sistema Notificaciones" <${process.env.EMAIL_USER}>`,
+    to: destinatario,
+    subject: asunto,
+    text: mensaje,
+  })
+
+  console.log(`Notificación enviada a ${destinatario}`)
+}
+

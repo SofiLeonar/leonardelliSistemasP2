@@ -3,6 +3,11 @@ info:
   description: Sistema de marketing y ventas.
   version: 1.0.0
   title: Sistema de marketing y ventas
+  description: |
+    Creado por **Sandra Sofia Rita Leonardelli**
+
+    Sistema para la gestión de productos y stock.
+  version: 1.0.0
 servers:
   - url: 'http://localhost:3000'
     description: 'Entorno de desarrollo'
